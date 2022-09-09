@@ -128,10 +128,10 @@ function Navbar(props) {
                         </div>
                     </label>
 
-                    <div className='inline-block space-x-4'>
+                    <div className={`${props.mode==='dark'? 'text-white' : 'text-black'} inline-block space-x-4`}>
                         <a href="https://github.com/H4rshSingh"><GitHubIcon /></a>
-                        <a href="https://twitter.com/H4rshSingh"><LinkedInIcon /></a>
-                        <a href="https://www.linkedin.com/in/h4rshsingh"><TwitterIcon /></a>
+                        <a href="https://twitter.com/H4rshSingh"><TwitterIcon/></a>
+                        <a href="https://www.linkedin.com/in/h4rshsingh"><LinkedInIcon/></a>
                     </div>
 
                 </ul>
