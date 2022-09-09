@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Notehub/static/css/main.b74aba96.css",
+    "main.js": "/Notehub/static/js/main.e64f9173.js",
+    "static/media/logo.png": "/Notehub/static/media/logo.eec329d262e7102b347b.png",
+    "index.html": "/Notehub/index.html",
+    "main.b74aba96.css.map": "/Notehub/static/css/main.b74aba96.css.map",
+    "main.e64f9173.js.map": "/Notehub/static/js/main.e64f9173.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b74aba96.css",
+    "static/js/main.e64f9173.js"
+  ]
+}
