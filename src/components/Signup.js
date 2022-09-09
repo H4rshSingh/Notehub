@@ -6,7 +6,8 @@ const Signup = (props) => {
   const [credentials, setCredentials] = useState({ email: '', password: '', cpassword: '' });
   let navigate = useNavigate();
 
-  const host = "http://localhost:5000";
+  // const host = "http://localhost:5000";
+  const host = "https://notehub-app.herokuapp.com"
 
   const handleSignup = async (e) => {
     e.preventDefault();

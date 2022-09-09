@@ -6,8 +6,9 @@ const Login = (props) => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   let navigate = useNavigate();
 
-  const host = "http://localhost:5000";
-  const handleLogin = async (e) => {
+  // const host = "http://localhost:5000";
+  const host = "https://notehub-app.herokuapp.com"
+  async function handleLogin(e) {
     e.preventDefault();
     const response = await fetch(`${host}/api/auth/login`, {
       method: 'POST',
@@ -16,17 +17,17 @@ const Login = (props) => {
       },
       body: JSON.stringify({ email: credentials.email, password: credentials.password })
     });
-    const json = await response.json()
+    const json = await response.json();
     console.log(json);
     if (json.success) {
       //save the auth token
       localStorage.setItem('token', json.authToken);
-      props.showAlert("Logged in successfully", "bg-green-200", 'text-green-600', 'Success')
+      props.showAlert("Logged in successfully", "bg-green-200", 'text-green-600', 'Success');
       navigate('/');
     }
 
     else {
-      props.showAlert("Invalid Credentials", "bg-red-200", 'text-red-600', 'Warning')
+      props.showAlert("Invalid Credentials", "bg-red-200", 'text-red-600', 'Warning');
     }
   }
   const onChange = (e) => {

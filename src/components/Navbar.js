@@ -14,8 +14,8 @@ function Navbar(props) {
     }
     
     const [userDetail, setUserDetail] = useState([])
-    const host = "http://localhost:5000";
-    //Delete this
+    // const host = "http://localhost:5000";
+    const host = "https://notehub-app.herokuapp.com"
     const getUser = async () => {
         const response = await fetch(`${host}/api/auth/getuser`, {
             method: 'POST',
