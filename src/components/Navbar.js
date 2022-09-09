@@ -102,16 +102,16 @@ function Navbar(props) {
                             <Link to="/signup"><button type="button" className="w-16 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br font-medium rounded text-xs px-2 py-1.5 text-center ">Sign up</button></Link>
                         </div>
                         :
-                        <div className='flex gap-6'>
-                            <div className='ml-16 text-center'>
+                        <div className='flex flex-col items-center justify-center gap-6'>
+                            <div className='text-center'>
                                 <h1 className='text-green-500 uppercase'><span>{userDetail.name}</span></h1>
                                 <h1 className={`${props.mode === 'dark' ? 'text-gray-200' : 'text-black'} text-xs`}>{userDetail.email}</h1>
                             </div>
-                            <button type="button" className="w-12 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br font-medium rounded text-xs px-1  text-center" onClick={handleLogout}>Logout</button>
+                            <button type="button" className="w-16 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br font-medium rounded text-xs px-2 py-1  text-center" onClick={handleLogout}>Logout</button>
                         </div>
                     }
 
-                    <li className={`hover:text-amber-600 uppercase ${location.pathname === '/' ? 'text-red-500 font-bold' : ''}`}><Link aria-current="page" to='/'>Home</Link></li>
+                    <li className={`hover:text-amber-600 uppercase ${location.pathname === '/' ? 'text-red-500 font-bold' : ''}`}><Link aria-current="page" to='/'>Notes</Link></li>
                     {/* <li className={`hover:text-amber-600 uppercase ${location.pathname === '/active' ? 'text-red-500 font-bold' : ''}`}><Link to='/about'>About</Link></li> */}
 
                     <label htmlFor="toggleB" className="flex items-center cursor-pointer">

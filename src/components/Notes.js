@@ -49,7 +49,7 @@ function Notes(props) {
             {/* Update Note Modal */}
             <div className='mt-6'>
                 <div className={showModal ? `bg-gray-500/90 flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-30 outline-none focus:outline-none` : 'hidden'}>
-                    <form className={`relative ${props.mode==='dark'? 'bg-[#322F3D] text-white' : 'bg-white text-gray-700'} shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-2 w-full max-w-lg`} onSubmit={handleCLickUpdate}>
+                    <form className={`relative ${props.mode==='dark'? 'bg-[#322F3D] text-white' : 'bg-white text-gray-700'} shadow-md rounded p-3 md:p-6 mb-4 mx-2 w-full max-w-lg`} onSubmit={handleCLickUpdate}>
                         <span className='absolute top-0 right-0' onClick={handleCancel}><Close /></span>
                         <h1 className={`text-2xl text-center mb-4 font-bold ${props.mode==='dark'? ' text-amber-400' : ' text-gray-700'}`}>Edit Note</h1>
                         <div className="mb-4">

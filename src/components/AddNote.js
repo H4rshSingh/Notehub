@@ -16,9 +16,9 @@ const AddNote = (props) => {
         setNote({ ...note, [e.target.name]: e.target.value })
     }
     return (
-        <div className="w-full px-4 max-w-6xl m-auto ">
+        <div className="w-full px-2 max-w-6xl m-auto ">
             <h1 className={`${props.mode==='dark'? 'text-white' : 'text-black'} text-xl font-semibold pb-2 md:text-4xl`}>Add a Note</h1>
-            <form className={`${props.mode==='dark'? 'bg-[#322F3D] text-white' : 'bg-white text-gray-700'} shadow-md rounded px-8 pt-6 pb-8 mb-4`} onSubmit={handleAddNote}>
+            <form className={`${props.mode==='dark'? 'bg-[#322F3D] text-white' : 'bg-white text-gray-700'} shadow-md rounded p-3 md:p-6 mb-4`} onSubmit={handleAddNote}>
                 <div className="mb-4">
                     <label className="block text-sm font-bold mb-2" htmlFor="title">Title</label>
                     <input className={`${props.mode==='dark'? 'bg-gray-300 ' : 'bg-gray-100'} text-black shadow appearance-none border rounded w-full py-2 px-3 leading-tight`} id="title" type="text" placeholder="title" name='title' value={note.title} minLength={3} required onChange={onChange} />

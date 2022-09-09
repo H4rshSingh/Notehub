@@ -42,7 +42,7 @@ const Login = (props) => {
           <img className='w-6 md:w-8' src={logo} alt="Notehub" />
           <span className='pl-2 text-2xl md:text-4xl'>Notehub</span>
         </div>
-        <form className={`${props.mode==='dark'? 'bg-[#322F3D] text-white' : 'bg-white text-gray-700'} shadow-md rounded px-8 pt-6 pb-8 mb-4`} onSubmit={handleLogin} >
+        <form className={`${props.mode==='dark'? 'bg-[#322F3D] text-white' : 'bg-white text-gray-700'} shadow-md rounded p-3 md:p-6 mb-4`} onSubmit={handleLogin} >
           <div className="mb-4">
             <label className="block text-sm font-bold mb-2" htmlFor="email">Email</label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="email" value={credentials.email} name='email' onChange={onChange} />
@@ -51,10 +51,13 @@ const Login = (props) => {
             <label className="block text-sm font-bold mb-2" htmlFor="password">Password</label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" name='password' value={credentials.password} onChange={onChange} />
           </div>
-          <div className="flex items-center justify-between">
+          {/* <div className="flex items-center justify-between">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Login</button>
             <p className="text-sm mt-2 font-light">Don't have account ?<Link to="/signup" className="font-medium ml-1 text-blue-600 hover:underline">Create a account</Link></p>
-          </div>
+          </div> */}
+
+          <button className="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" >Login</button>
+          <p className="text-sm mt-2 font-light ">Don't have account ?<Link to="/signup" className="font-medium text-blue-600 hover:underline ml-1">Create a account</Link></p>
         </form>
         <p className="text-center text-gray-400 text-xs">
           &copy;2022 Newshub Corp. All rights reserved.
