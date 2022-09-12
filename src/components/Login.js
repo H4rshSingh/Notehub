@@ -60,7 +60,7 @@ const Login = (props) => {
           <p className="text-sm mt-2 font-light ">Don't have account ?<Link to="/signup" className="font-medium text-blue-600 hover:underline ml-1">Create a account</Link></p>
         </form>
         <p className="text-center text-gray-400 text-xs">
-          &copy;2022 Newshub Corp. All rights reserved.
+          &copy;2022 Notehub Corp. All rights reserved.
         </p>
       </div>
     </div>
