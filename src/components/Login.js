@@ -10,6 +10,8 @@ const Login = (props) => {
   const host = "https://notehub-app.herokuapp.com"
   async function handleLogin(e) {
     e.preventDefault();
+    props.setProgress(30);
+    
     const response = await fetch(`${host}/api/auth/login`, {
       method: 'POST',
       headers: {
@@ -19,6 +21,7 @@ const Login = (props) => {
     });
     const json = await response.json();
     console.log(json);
+    props.setProgress(70);
     if (json.success) {
       //save the auth token
       localStorage.setItem('token', json.authToken);
@@ -29,7 +32,9 @@ const Login = (props) => {
     else {
       props.showAlert("Invalid Credentials", "bg-red-200", 'text-red-600', 'Warning');
     }
+    props.setProgress(100);
   }
+  
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value })
   }
@@ -51,16 +56,11 @@ const Login = (props) => {
             <label className="block text-sm font-bold mb-2" htmlFor="password">Password</label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" name='password' value={credentials.password} onChange={onChange} />
           </div>
-          {/* <div className="flex items-center justify-between">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Login</button>
-            <p className="text-sm mt-2 font-light">Don't have account ?<Link to="/signup" className="font-medium ml-1 text-blue-600 hover:underline">Create a account</Link></p>
-          </div> */}
-
           <button className="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" >Login</button>
           <p className="text-sm mt-2 font-light ">Don't have account ?<Link to="/signup" className="font-medium text-blue-600 hover:underline ml-1">Create a account</Link></p>
         </form>
         <p className="text-center text-gray-400 text-xs">
-          &copy;2022 Newshub Corp. All rights reserved.
+          &copy;2022 Notehub Corp. All rights reserved.
         </p>
       </div>
     </div>

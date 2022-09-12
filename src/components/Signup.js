@@ -11,6 +11,7 @@ const Signup = (props) => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
+    props.setProgress(30);
     const { name, email, password } = credentials;
     const response = await fetch(`${host}/api/auth/createuser`, {
       method: 'POST',
@@ -20,7 +21,7 @@ const Signup = (props) => {
       body: JSON.stringify({ name, email, password })
     });
     const json = await response.json();
-
+    props.setProgress(70);
     if (json.success) {
       //save the auth token
       localStorage.setItem('token', json.authToken);
@@ -30,6 +31,7 @@ const Signup = (props) => {
     else {
       props.showAlert("Sorry a user with this email already exists", "bg-red-200", 'text-red-600', 'Warning')
     }
+    props.setProgress(100);
   }
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value })

@@ -33,7 +33,8 @@ const AddNote = (props) => {
                     <input className={`${props.mode==='dark'? 'bg-gray-300' : 'bg-gray-100'} text-black shadow appearance-none border rounded w-full py-2 px-3 leading-tight`} id="tag" type="text" name="tag" placeholder="tag" value={note.tag} onChange={onChange} />
                 </div>
                 <div className="flex items-center justify-between">
-                    <button disabled={note.title.length < 3 || note.description.length <5} type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-60 disabled:cursor-not-allowed" onClick={() => props.showAlert("Note has been addded successfully!", "bg-green-200", "text-green-600", "Success") }>Add Note</button>
+                    {/* <button disabled={note.title.length < 3 || note.description.length <5} type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-60 disabled:cursor-not-allowed" onClick={() => props.showAlert("Note has been addded successfully!", "bg-green-200", "text-green-600", "Success") }>Add Note</button> */}
+                    <button disabled={note.title.length < 3 || note.description.length <5} type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-60 disabled:cursor-not-allowed" >Add Note</button>
                 </div>
             </form>
         </div>
