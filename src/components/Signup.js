@@ -7,7 +7,7 @@ const Signup = (props) => {
   let navigate = useNavigate();
 
   // const host = "http://localhost:5000";
-  const host = "https://notehub.up.railway.app";
+  const host = "https://notehub.onrender.com";
 
   const handleSignup = async (e) => {
     e.preventDefault();

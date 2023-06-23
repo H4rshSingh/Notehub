@@ -14,8 +14,8 @@ function Navbar(props) {
     }
     
     const [userDetail, setUserDetail] = useState([])
-    // const host = "http://localhost:5000";
-    const host = "https://notehub.up.railway.app";
+    const host = "http://localhost:5000";
+    // const host = "https://notehub.up.railway.app";
     const getUser = async () => {
         const response = await fetch(`${host}/api/auth/getuser`, {
             method: 'POST',
@@ -58,7 +58,6 @@ function Navbar(props) {
                         <ul className={`hidden md:flex gap-4 px-6 py-2 text-sm  font-medium ${props.mode === 'dark' ? 'bg-white/10' : 'bg-gray-400/10'} rounded-lg items-center`}>
 
                             <li className={`hover:text-amber-500 uppercase ${location.pathname === '/' ? 'text-red-500 font-bold' : ''}`}><Link aria-current="page" to='/'>NOtes</Link></li>
-                            {/* <li className={`hover:text-amber-500 uppercase ${location.pathname === '/about' ? 'text-red-500 font-bold' : ''}`}><Link to='/about'>About</Link></li> */}
 
                             {!localStorage.getItem('token') ?
                                 <div className='space-x-1 ml-16 '>
